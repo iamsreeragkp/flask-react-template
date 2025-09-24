@@ -8,14 +8,14 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex h-screen">
         {/* Sidebar */}
         <Sidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
 
-        <div className="relative flex flex-1 flex-col">
+        <div className="relative flex flex-1 flex-col overflow-hidden">
           {/* Header */}
           <Header
             isSidebarOpen={isSidebarOpen}
@@ -23,7 +23,7 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
           />
 
           {/* Main Content */}
-          <main>{children}</main>
+          <main className="flex-1 overflow-y-auto">{children}</main>
         </div>
       </div>
     </div>
